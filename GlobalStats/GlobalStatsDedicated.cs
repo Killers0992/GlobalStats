@@ -24,7 +24,7 @@ namespace GlobalStats
         {
             var dType = (DataType)reader.GetByte();
             if (Config.Debug)
-                Logger.Debug($"Data recevied \"{dType}\" from server \"{server.FullAddress}\".");
+                Logger.Debug($"Data received \"{dType}\" from server \"{server.FullAddress}\".");
             switch (dType)
             {
                 case DataType.PlayerDeath:
@@ -251,7 +251,6 @@ namespace GlobalStats
                 await dbcon.CloseAsync();
             }
 
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateDied(string con, string UserID, int type)
@@ -304,7 +303,6 @@ namespace GlobalStats
                 await dbcon.CloseAsync();
             }
 
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateRespawnTeam(string con, string UserID, int type)
@@ -332,8 +330,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateRoundsPlayed(string con, string UserID)
@@ -348,8 +344,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register rounds_played for " + UserID);
         }
 
         public async Task UpdateIntercomTime(string con, string UserID, int time)
@@ -365,8 +359,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register intercom_time for " + UserID);
         }
 
         public async Task UpdateEscapeTime(string con, string UserID, int type, int time)
@@ -395,8 +387,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateShoots(string con, string UserID, int shoots, int shootshead)
@@ -418,8 +408,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register intercom_time for " + UserID);
         }
 
         public async Task UpdateRoundsWon(string con, string UserID)
@@ -434,8 +422,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register rounds_won for " + UserID);
         }
 
         public async Task UpdateMedical(string con, string UserID, int type)
@@ -469,8 +455,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateWarhead(string con, string UserID, int type)
@@ -497,8 +481,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register " + fieldName + " for " + UserID);
         }
 
         public async Task UpdateDamage(string con, string UserID, int deal, int received)
@@ -520,8 +502,6 @@ namespace GlobalStats
                 }
                 await dbcon.CloseAsync();
             }
-
-            Logger.Info("Register damage for " + UserID);
         }
 
         public async Task UpdateStats(string con, string UserID, Roletype role, bool isDeath = false, bool isKilled = false)
@@ -602,7 +582,6 @@ namespace GlobalStats
 
                 await dbcon.CloseAsync();
             }
-            Logger.Info("Register " + fieldName + " for " + UserID);
 
         }
         public async Task UpdateTime(string con, string UserID, Roletype role, int time)
@@ -680,8 +659,6 @@ namespace GlobalStats
 
                 await dbcon.CloseAsync();
             }
-            Logger.Info($"Register time_as_{fieldName} for " + UserID);
-
         }
     }
 }
