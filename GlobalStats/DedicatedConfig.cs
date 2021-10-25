@@ -10,6 +10,7 @@ namespace GlobalStats
     public class DedicatedConfig : IConfig
     {
         public bool IsEnabled { get; set; } = true;
+        public bool Debug { get; set; } = false;
         public string DatabaseConnectionKey { get; set; } = "";
     }
 }

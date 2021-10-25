@@ -22,7 +22,10 @@ namespace GlobalStats
 
         public override void OnMessageReceived(NPServer server, NetDataReader reader)
         {
-            switch ((DataType)reader.GetByte())
+            var dType = (DataType)reader.GetByte();
+            if (Config.Debug)
+                Logger.Debug($"Data recevied \"{dType}\" from server \"{server.FullAddress}\".");
+            switch (dType)
             {
                 case DataType.PlayerDeath:
                     string targetUserid = reader.GetString();
